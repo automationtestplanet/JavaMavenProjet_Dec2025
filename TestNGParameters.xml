@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="TestNGUnitTestSuite">
+	<test thread-count="3" name="TestNGTestCases">
+		<parameter name="Name" value="Raju" />
+		<parameter name="Job" value="Trainer" />
+		<classes>
+			<class name="com.unittest.TestNGUnitTest5">
+				<methods>
+					<include name="test1" />
+					<include name="test2" />
+					<include name="test3" />
+				</methods>
+			</class>
+		</classes>
+	</test> <!--
+	TestNGTestCases -->
+</suite> <!--
+TestNGUnitTestSuite -->
