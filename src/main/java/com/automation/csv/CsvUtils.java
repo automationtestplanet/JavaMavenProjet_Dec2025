@@ -10,7 +10,7 @@ import java.util.Map;
 
 public class CsvUtils {
 		
-	public List<Map<String, String>> readDataFromCsv(String filePath) {
+	public List<Map<String, String>> readDataFromCsv2(String filePath) {
 		List<Map<String, String>> dataList = new ArrayList<>();
 		try {
 		

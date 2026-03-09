@@ -7,6 +7,7 @@ import org.json.simple.JSONObject;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import com.automation.csv.CsvUtils;
 import com.automation.excel.ExcelUtils;
 import com.automation.json.JsonUtils;
 import com.automation.models.Credentials;
@@ -65,5 +66,19 @@ public class FilesTest {
 		Assert.assertNotNull(credentials, "Json Object is Null");
 		Assert.assertEquals(credentials.getUserName(),"ABC123");
 		Assert.assertTrue(credentials.getPassword().equals("ABC@123"));
+	}
+	
+	@Test
+	public void ReadDataFromCsvTest() {
+		CsvUtils csvUtils = new CsvUtils();
+		String filePath = System.getProperty("user.dir") + "\\src\\test\\resources\\CreateUser.csv";
+		List<Map<String, String>> data = csvUtils.readDataFromCsv2(filePath);
+
+		Map<String, String> filteredMap = data.stream().filter(eachMapObj -> eachMapObj.get("Name").equals("Tester1"))
+				.findFirst().orElse(null);
+		System.out.println(filteredMap);
+
+		Assert.assertNotNull(filteredMap, "Filtered Object is Null");
+		Assert.assertEquals( filteredMap.get("Job"),"QA Engieer","Filtered Object Type Of language showing wrong");
 	}
 }

@@ -5,7 +5,7 @@
     <classes>
       <class name="com.filestest.FilesTest">
         <methods>
-          <include name="readDataFromXmlTest"/>
+          <include name="ReadDataFromCsvTest"/>
         </methods>
       </class> <!-- com.filestest.FilesTest -->
     </classes>
